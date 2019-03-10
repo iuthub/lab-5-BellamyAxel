@@ -24,3 +24,10 @@ input[type="submit"] {
     font-size: 2em;
     width: 100%;
 }
+
+.listsuckers{
+    font: arial;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}

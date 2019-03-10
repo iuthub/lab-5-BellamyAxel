@@ -3,6 +3,7 @@
 	<head>
 		<title>Buy Your Way to a Better Education!</title>
 		<link href="buyagrade.css" type="text/css" rel="stylesheet" />
+
 	</head>
 	
 	<body>
@@ -14,26 +15,67 @@
 		
 		<hr />
 		
-		<h2>Give Us Your Money</h2>
+		<form action="sucker.php" method='POST'>
+			<h2>Give Us Your Money</h2>
 		<dl>
 			<dt>Name</dt>
 			<dd>
-				???
+				<input type="text" name="name">
 			</dd>
 			
 			<dt>Section</dt>
 			<dd>
-				???
+				<select name="section">
+					<option value="MH">MH</option>
+					<option value="MA">MA</option>
+				</select>
 			</dd>
 			
 			<dt>Credit Card</dt>
 			<dd>
-				???
+				<input type="text" name="card">
+			</dd>
+			<dd>
+				<input type="radio" id="radio1" name="radio" value="Visa Card">
+				<label for="radio1">Visa</label>
+				<input type="radio" id="radio2" name="radio" value="Mater Card"/>
+				<label for="radio2">Master Card</label>
 			</dd>
 		</dl>
-		
+
 		<div>
-			I am a giant sucker.
+			<input class="back-submit" type="submit" name="submit" value="I am a giant sucker">
 		</div>
+		<?php 
+			include "include/sucker.php";
+		 ?>
+		</form>
+		
+
+		<!--
+			<?php  
+	if(isset($_POST['submit'])){
+		$name = $_POST['name'];
+		echo "<h3>Your Name: $name</h3>";
+		
+		$section=$_POST['section'];
+		echo "<h3>Your section is: $section</h3>";
+
+		if(isset($_POST['radio']))
+		{
+
+		$card_type=$_POST['radio'];
+		echo "<h3>Type of card: $card_type</h3>";	
+		}
+
+		$card_num=$_POST['card'];
+		echo "<h3>Card number: $card_num</h3>";
+
+	}
+	
+	?>
+	
+		-->
+		
 	</body>
 </html>
